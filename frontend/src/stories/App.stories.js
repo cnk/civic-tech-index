@@ -1,20 +1,19 @@
-import React from "react";
-import { MemoryRouter } from "react-router-dom";
+/* eslint-disable import/no-anonymous-default-export */
 
 import App from "../App";
-
-import axios from "axios";
-import MockAdapter from "axios-mock-adapter"
-import { mockPost, mockTag, mockCategory } from "./mockUtils";
+// import axios from "axios";
+import { MemoryRouter } from "react-router-dom";
+// import MockAdapter from "axios-mock-adapter"
+import React from "react";
 
 export default {
-  title: "App",
   component: App,
   decorators: [],
+  title: "App",
 };
 
 export const Example = () => {
-  const mock = new MockAdapter(axios);
+  // const mock = new MockAdapter(axios);
 
   return (
     <MemoryRouter initialEntries={["/"]}>

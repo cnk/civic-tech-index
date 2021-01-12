@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Switch } from "react-router";
 
 
-function App() {
+const App = function() {
   return (
     <Switch>
       <Route

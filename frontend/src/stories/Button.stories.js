@@ -1,21 +1,22 @@
-import React from 'react';
+/* eslint-disable import/no-anonymous-default-export */
 
 import { Button } from './Button';
+import React from 'react';
 
 export default {
-  title: 'Example/Button',
-  component: Button,
   argTypes: {
     backgroundColor: { control: 'color' },
   },
+  component: Button,
+  title: 'Example/Button',
 };
 
 const Template = (args) => <Button {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  primary: true,
   label: 'Button',
+  primary: true,
 };
 
 export const Secondary = Template.bind({});
@@ -25,12 +26,12 @@ Secondary.args = {
 
 export const Large = Template.bind({});
 Large.args = {
-  size: 'large',
   label: 'Button',
+  size: 'large',
 };
 
 export const Small = Template.bind({});
 Small.args = {
-  size: 'small',
   label: 'Button',
+  size: 'small',
 };

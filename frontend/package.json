@@ -3,35 +3,48 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
+    "@material-ui/core": "^4.11.2",
+    "@material-ui/icons": "^4.11.2",
+    "@material-ui/lab": "^4.0.0-alpha.57",
     "axios": "^0.21.1",
     "axios-mock-adapter": "^1.19.0",
     "dompurify": "^2.2.6",
-    "node-sass": "4.14.1",
+    "material-ui-chip-input": "^1.1.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-jss": "^10.5.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
-    "web-vitals": "^0.2.4"
+    "web-vitals": "^0.2.4",
+    "webfontloader": "^1.6.28"
   },
   "resolutions": {
     "babel-loader": "8.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
+    "start-dev": "react-scripts -r @cypress/instrument-cra start",
     "build": "react-scripts build",
+    "cypress:run": "cypress run",
+    "cypress:open": "cypress open",
+    "lint": "eslint 'src/**/",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public"
   },
   "proxy": "http://web:8000",
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
+"eslintConfig": {
+    "extends": "react-app",
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.js"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
     ]
   },
   "browserslist": {
@@ -47,6 +60,9 @@
     ]
   },
   "devDependencies": {
+    "@babel/preset-react": "^7.12.10",
+    "@cypress/code-coverage": "^3.9.1",
+    "@cypress/instrument-cra": "^1.4.0",
     "@storybook/addon-actions": "^6.1.11",
     "@storybook/addon-essentials": "^6.1.11",
     "@storybook/addon-links": "^6.1.11",
@@ -54,6 +70,12 @@
     "@storybook/node-logger": "^6.1.11",
     "@storybook/preset-create-react-app": "^3.1.5",
     "@storybook/react": "^6.1.11",
+    "babel-plugin-istanbul": "^6.0.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "cypress": "^6.2.1",
+    "eslint": "^7.11.0",
+    "eslint-plugin-react": "^7.22.0",
+    "istanbul-lib-coverage": "^3.0.0",
     "react-test-renderer": "^17.0.1"
   }
 }
